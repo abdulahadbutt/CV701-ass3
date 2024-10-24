@@ -11,24 +11,25 @@ stages:
     - LEARNING_RATE
     - OPTIMIZER
     outs:
-    - eval
+    - metrics
     - models
-    metrics:
-    - eval/metrics.json
-    # plots:
-    #   - training loss:
-    #       template: simple
-    #       x: step
-    #       y:
-    #         eval/plots/metrics/train/loss.tsv: loss
-    #   - test loss:
-    #       template: simple
-    #       x: step
-    #       y:
-    #         eval/plots/metrics/test/loss.tsv: loss
-    #   - test accuracy:
-    #       template: simple
-    #       x: step
-    #       y:
-    #         eval/plots/metrics/test/accuracy.tsv: accuracy
+
+metrics:
+- metrics/metrics.json
+plots:
+  - training loss:
+      template: simple
+      x: step
+      y:
+        metrics/plots/metrics/train/loss.tsv: loss
+  - test loss:
+      template: simple
+      x: step
+      y:
+        metrics/plots/metrics/test/loss.tsv: loss
+  - test accuracy:
+      template: simple
+      x: step
+      y:
+        metrics/plots/metrics/test/accuracy.tsv: accuracy
 
