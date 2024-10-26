@@ -10,12 +10,12 @@ stages:
       nfiles: 12956
     - path: src/model.py
       hash: md5
-      md5: 24757f5c3de9383e1706ef1db3a8da3d
-      size: 1445
+      md5: 925e2b226cbf2c5ca991a635f2ff411d
+      size: 1612
     - path: src/train.py
       hash: md5
-      md5: 34536f1d50ee742433c0bc58b4ae26b2
-      size: 5936
+      md5: 893c4e1326a8b84a15f7cff3400c5878
+      size: 5961
     params:
       params.yaml:
         BATCH_SIZE: 512
@@ -26,11 +26,11 @@ stages:
     outs:
     - path: metrics
       hash: md5
-      md5: 162d96897129a9ff7f7075d883c0620f.dir
-      size: 15514
+      md5: 4aa74328ff6bd816f45f11f3c91f4384.dir
+      size: 15503
       nfiles: 5
     - path: models
       hash: md5
-      md5: f3086e4da04541c5446c4c9402309ca2.dir
-      size: 65865706
+      md5: 9aa644dba539c3979d846007f6bbe2ed.dir
+      size: 41218186
       nfiles: 2

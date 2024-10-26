@@ -204,7 +204,7 @@ test_dataloader = torch.utils.data.DataLoader(
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = CNN()
-assert model.num_of_params() <= MAX_PARAMS, "Too many network parameters"
+assert model.num_of_params() <= MAX_PARAMS, f"Too many network parameters {model.num_of_params()}"
 model.to(device)
 
 
