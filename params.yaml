@@ -1,10 +1,10 @@
 # ? Hyperparameters
-EPOCHS: 50
+EPOCHS: 30
 BATCH_SIZE: 512
 # Current optimzer support: sgd, adam
 OPTIMIZER: 'adam' 
 LEARNING_RATE: 0.001
-IMG_SIZE : 150
+IMG_SIZE : 160
 
 # ? Data stuff (no need to change)
 ROOT_DIR : 'data'

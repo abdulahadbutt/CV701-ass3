@@ -15,18 +15,18 @@ stages:
     params:
       params.yaml:
         BATCH_SIZE: 512
-        EPOCHS: 50
-        IMG_SIZE: 150
+        EPOCHS: 30
+        IMG_SIZE: 160
         LEARNING_RATE: 0.001
         OPTIMIZER: adam
     outs:
     - path: metrics
       hash: md5
-      md5: b775b1fec799594242c2c5ae71493151.dir
-      size: 3479
-      nfiles: 4
+      md5: 119358b3ff0deab7c728895a6cd9c850.dir
+      size: 15509
+      nfiles: 5
     - path: models
       hash: md5
-      md5: 99f4cdbfbb5e2fd23bb39d2133a38580.dir
-      size: 65276748
+      md5: 8afc46e3988eb5e3d81a7516eb21f85a.dir
+      size: 65275882
       nfiles: 2
