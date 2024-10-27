@@ -14,23 +14,23 @@ stages:
       size: 1792
     - path: src/train.py
       hash: md5
-      md5: 893c4e1326a8b84a15f7cff3400c5878
-      size: 5961
+      md5: dcfcbbef3eaa707f91397bea2b3e66a7
+      size: 6163
     params:
       params.yaml:
         BATCH_SIZE: 512
         EPOCHS: 30
         IMG_SIZE: 160
         LEARNING_RATE: 0.001
-        OPTIMIZER: adam
+        OPTIMIZER: rmsprop
     outs:
     - path: metrics
       hash: md5
-      md5: 59040d686aa6fd1124bde68fc3843f92.dir
-      size: 15535
+      md5: 53a6d262fa15292e088b84d9904ae033.dir
+      size: 15529
       nfiles: 5
     - path: models
       hash: md5
-      md5: 7b73c76e80581b351bc5c51b566e1cc7.dir
-      size: 65090234
+      md5: 25f99262cd693b7ac75101acae033bfc.dir
+      size: 43391454
       nfiles: 2

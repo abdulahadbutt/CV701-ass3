@@ -212,6 +212,10 @@ if OPTIMIZER == 'sgd':
     optimizer = torch.optim.SGD(model.parameters(), lr=LEARNING_RATE)
 elif OPTIMIZER == 'adam':
     optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
+elif OPTIMIZER == 'adamw':
+    optimizer = torch.optim.AdamW(model.parameters(), lr=LEARNING_RATE)
+elif OPTIMIZER == 'rmsprop':
+    optimizer = torch.optim.RMSprop(model.parameters(), lr=LEARNING_RATE)
 else:
     print('Invalid optimizer listed')
     exit()

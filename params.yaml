@@ -1,8 +1,8 @@
 # ? Hyperparameters
 EPOCHS: 30
 BATCH_SIZE: 512
-# Current optimzer support: sgd, adam
-OPTIMIZER: 'adam' 
+# Current optimzer support: sgd, adam, adamw, rmsprop
+OPTIMIZER: 'rmsprop' 
 LEARNING_RATE: 0.001
 IMG_SIZE : 160
 
