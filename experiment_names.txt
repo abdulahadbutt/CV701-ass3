@@ -1,0 +1,24 @@
+dc113d8:
+	7cfc4fb [conv_numfilters-4-8-16]
+	fa94a6e [batchnorm]
+	42aa906 [avgpool2d-2-firstlayers]
+	a39e17a [conv_numfilters-8-12-24]
+	168b3d2 [dropout-after-relu-and-sequential]
+	6011a01 [batchnorm+dropout-all]
+	68fe8f2 [bathnorm+seqdropout]
+	55298f4 [dropout-only-sequential]
+bce94e0:
+	bf32c3b [conv_3-3-3]
+	54c2933 [conv_7-5-5]
+	9893685 [conv_5-3-3]
+	7d7fde1 [5_kernel]
+	e0c1758 [conv_7-7-7]
+	86e4ff7 [conv_7-3-3]
+69ee383:
+	6ceae14 [max-pool-everywhere]
+	a664b76 [avgpool2d-6]
+	70f4b24 [avgpool2d-4]
+	e2440c5 [maxpool-4]
+	af2f255 [one-deeper]
+ff65bbe:
+	88eff42 [initial]
