@@ -5,6 +5,8 @@ BATCH_SIZE: 512
 OPTIMIZER: 'rmsprop' 
 LEARNING_RATE: 0.001
 IMG_SIZE : 160
+# Current scheduler support: None, 'constant', 'exponential'
+SCHEDULER: 'constant'
 
 # ? Data stuff (no need to change)
 ROOT_DIR : 'data'

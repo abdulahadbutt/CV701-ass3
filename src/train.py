@@ -107,8 +107,8 @@ def train(
     criterion: torch.nn.CrossEntropyLoss,
     device:torch.device,
     live: Live,
-    test_dataloader: torch.utils.data.DataLoader
-    
+    test_dataloader: torch.utils.data.DataLoader,
+    scheduler: torch.optim.lr_scheduler.LRScheduler
 ):
 
     
@@ -121,7 +121,8 @@ def train(
         )
         train_statistics_list.append(train_epoch_statistics)
         live.log_metric('train/loss', train_epoch_statistics['epoch_loss'], plot=True)
-
+        scheduler.step()
+        
         # * Testing Code
         test_epoch_statistics = test_one_epoch(
             model, optimizer, test_dataloader, epoch, criterion, device
@@ -169,6 +170,7 @@ BATCH_SIZE = params['BATCH_SIZE']
 LEARNING_RATE = params['LEARNING_RATE']
 EPOCHS = params['EPOCHS']
 OPTIMIZER = params['OPTIMIZER']
+SCHEDULER = params['SCHEDULER']
 
 MAX_PARAMS = params['MAX_PARAMS']
 MAX_EPOCHS = params['MAX_EPOCHS']
@@ -220,11 +222,18 @@ else:
     print('Invalid optimizer listed')
     exit()
 
-
+if SCHEDULER == 'constant':
+    scheduler = torch.optim.lr_scheduler.ConstantLR(optimizer)
+elif SCHEDULER == 'exponential':
+    scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.9)
+elif SCHEDULER == 'linear':
+    scheduler = torch.optim.lr_scheduler.LinearLR(optimizer)
+else:
+    scheduler = None 
 
 criterion = torch.nn.CrossEntropyLoss()
 loss_statistics = train(
-    model, optimizer, train_dataloader, EPOCHS, criterion, device, live, test_dataloader
+    model, optimizer, train_dataloader, EPOCHS, criterion, device, live, test_dataloader, scheduler
 )
 
 
