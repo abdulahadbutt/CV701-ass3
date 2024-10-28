@@ -121,7 +121,8 @@ def train(
         )
         train_statistics_list.append(train_epoch_statistics)
         live.log_metric('train/loss', train_epoch_statistics['epoch_loss'], plot=True)
-        scheduler.step()
+        if scheduler:
+            scheduler.step()
         
         # * Testing Code
         test_epoch_statistics = test_one_epoch(

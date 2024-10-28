@@ -2,11 +2,11 @@
 EPOCHS: 30
 BATCH_SIZE: 512
 # Current optimzer support: sgd, adam, adamw, rmsprop
-OPTIMIZER: 'rmsprop' 
+OPTIMIZER: 'adam' 
 LEARNING_RATE: 0.001
 IMG_SIZE : 160
 # Current scheduler support: None, 'constant', 'exponential'
-SCHEDULER: 'constant'
+SCHEDULER: null
 
 # ? Data stuff (no need to change)
 ROOT_DIR : 'data'
