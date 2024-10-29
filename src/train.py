@@ -10,6 +10,8 @@ from dvclive import Live
 import os 
 import yaml 
 from tqdm import tqdm
+from torchvision import transforms
+
 # from torch.utils.tensorboard import SummaryWriter
 
 
@@ -172,6 +174,7 @@ LEARNING_RATE = params['LEARNING_RATE']
 EPOCHS = params['EPOCHS']
 OPTIMIZER = params['OPTIMIZER']
 SCHEDULER = params['SCHEDULER']
+DATA_AUG = params['DATA_AUG']
 
 MAX_PARAMS = params['MAX_PARAMS']
 MAX_EPOCHS = params['MAX_EPOCHS']
@@ -184,10 +187,30 @@ live = Live('metrics', dvcyaml=False, save_dvc_exp=True)
 os.makedirs('models', exist_ok=True)
 os.makedirs('metrics/', exist_ok=True)
 
+if DATA_AUG == 'affine':
+    data_augmentation = transforms.Compose([
+        transforms.RandomAffine(
+            degrees=(30, 70), translate=(0.1, 0.3), scale=(0.5, 0.75)
+        ),
+        transforms.Resize((IMG_SIZE, IMG_SIZE)),
+        transforms.ToTensor()
+    ])
+elif DATA_AUG == 'horizontal_flip':
+    data_augmentation = transforms.Compose([
+        transforms.RandomHorizontalFlip(),
+        transforms.Resize((IMG_SIZE, IMG_SIZE)),
+        transforms.ToTensor()
+    ])
+
+else:
+    data_augmentation = None 
+
+
 train_dataset = ImageWoof(
     ROOT_DIR, 
     IMG_SIZE,
     train=True,
+    transform=data_augmentation
 )
 
 test_dataset = ImageWoof(

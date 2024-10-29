@@ -14,24 +14,25 @@ stages:
       size: 1792
     - path: src/train.py
       hash: md5
-      md5: dfcc45a9fb1859ed6a1ebdb004425b33
-      size: 6630
+      md5: 141edcce548e5f49e61b5c69d1f39351
+      size: 7247
     params:
       params.yaml:
         BATCH_SIZE: 512
-        EPOCHS: 10
+        DATA_AUG: horizontal_flip
+        EPOCHS: 30
         IMG_SIZE: 160
         LEARNING_RATE: 0.001
         OPTIMIZER: adam
-        SCHEDULER:
+        SCHEDULER: constant
     outs:
     - path: metrics
       hash: md5
-      md5: 8337ac2bb31bcf061495b1a380e099ed.dir
-      size: 10173
+      md5: 92fe48a261c8e0b9de80476f3f2c72c8.dir
+      size: 15531
       nfiles: 5
     - path: models
       hash: md5
-      md5: 2738ee68ec66b56af7bb88c4554f6271.dir
-      size: 65090234
+      md5: 38ebf0b573d274a95b9eee5451495162.dir
+      size: 65090362
       nfiles: 2

@@ -12,6 +12,7 @@ stages:
     - LEARNING_RATE
     - OPTIMIZER
     - SCHEDULER
+    - DATA_AUG
     outs:
     - metrics
     - models

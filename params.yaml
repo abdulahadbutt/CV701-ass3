@@ -1,12 +1,14 @@
 # ? Hyperparameters
-EPOCHS: 10
+EPOCHS: 30
 BATCH_SIZE: 512
 # Current optimzer support: sgd, adam, adamw, rmsprop
 OPTIMIZER: 'adam' 
 LEARNING_RATE: 0.001
 IMG_SIZE : 160
 # Current scheduler support: None, 'constant', 'exponential'
-SCHEDULER: null
+SCHEDULER: constant
+# Current scheduler support: None, 'horizontal_flip', 'affine'
+DATA_AUG: horizontal_flip
 
 # ? Data stuff (no need to change)
 ROOT_DIR : 'data'
