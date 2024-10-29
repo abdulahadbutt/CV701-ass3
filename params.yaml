@@ -1,5 +1,5 @@
 # ? Hyperparameters
-EPOCHS: 30
+EPOCHS: 10
 BATCH_SIZE: 512
 # Current optimzer support: sgd, adam, adamw, rmsprop
 OPTIMIZER: 'adam' 
